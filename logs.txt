@@ -1,0 +1,264 @@
+╭─────────────────────────────────────────────────────────────────────────────────── Crew Execution Started ───────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                                                                                                              │
+│  Crew Execution Started                                                                                                                                                                      │
+│  Name: crew                                                                                                                                                                                  │
+│  ID: f9801e6e-f191-402f-8cb9-36028244e4fd                                                                                                                                                    │
+│                                                                                                                                                                                              │
+│                                                                                                                                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+🚀 Crew: crew
+└── 📋 Task: ac03f8bd-bea0-495a-904f-37249d7845e4
+       Status: Executing Task...
+
+ERROR:root:Error during short_term search: APIStatusError.__init__() missing 2 required keyword-only arguments: 'response' and 'body'
+ERROR:root:Error during entities search: APIStatusError.__init__() missing 2 required keyword-only arguments: 'response' and 'body'
+🚀 Crew: crew
+└── 📋 Task: ac03f8bd-bea0-495a-904f-37249d7845e4
+       Status: Executing Task...
+    └── 🤖 Agent: Observer from Ceph metrics
+            Status: In Progress
+
+# Agent: Observer from Ceph metrics
+## Task: Get {disk occupation} for all nodes in the cluster
+🤖 Agent: Observer from Ceph metrics
+    Status: In Progress
+└── 🧠 Thinking...
+
+🤖 Agent: Observer from Ceph metrics
+    Status: In Progress
+
+🤖 Agent: Observer from Ceph metrics
+    Status: In Progress
+
+Get Disk Occupation function called
+> /Users/chebrolubalasaiharika/Desktop/myown/multi-agent/tools.py(11)GetDiskOccupationTool()
+-> return get_diskoccupation(param_topic)
+(Pdb) param_topic
+'disk_occupation'
+(Pdb) c
+
+### Ceph Disk Occupation Per Node ###
+Node: ceph-sangadi-nvme-ixwhtf-node3, Disk Occupation: 4.0
+Node: ceph-sangadi-nvme-ixwhtf-node5, Disk Occupation: 4.0
+Node: ceph-sangadi-nvme-ixwhtf-node4, Disk Occupation: 4.0
+
+
+# Agent: Observer from Ceph metrics
+## Thought: Action: GetDiskOccupationTool
+## Using tool: GetDiskOccupationTool
+## Tool Input: 
+"{\"param_topic\": \"disk_occupation\"}"
+## Tool Output: 
+Node: ceph-sangadi-nvme-ixwhtf-node3, Disk Occupation: 4.0
+Node: ceph-sangadi-nvme-ixwhtf-node5, Disk Occupation: 4.0
+Node: ceph-sangadi-nvme-ixwhtf-node4, Disk Occupation: 4.0
+🤖 Agent: Observer from Ceph metrics
+    Status: In Progress
+└── 🧠 Thinking...
+
+
+
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+
+Provider List: https://docs.litellm.ai/docs/providers
+
+🚀 Crew: crew
+└── 📋 Task: ac03f8bd-bea0-495a-904f-37249d7845e4
+       Status: Executing Task...
+    └── 🤖 Agent: Observer from Ceph metrics
+            Status: In Progress
+        └── ❌ LLM Failed
+
+╭───────────────────────────────────────────────────────────────────────────────────────── LLM Error ──────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                                                                                                              │
+│  ❌ LLM Call Failed                                                                                                                                                                          │
+│  Error: litellm.APIConnectionError: list index out of range                                                                                                                                  │
+│  Traceback (most recent call last):                                                                                                                                                          │
+│    File "/opt/homebrew/lib/python3.11/site-packages/litellm/main.py", line 2870, in completion                                                                                               │
+│      response = base_llm_http_handler.completion(                                                                                                                                            │
+│                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                                                                                                                            │
+│    File "/opt/homebrew/lib/python3.11/site-packages/litellm/llms/custom_httpx/llm_http_handler.py", line 269, in completion                                                                  │
+│      data = provider_config.transform_request(                                                                                                                                               │
+│             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                                                                                                                               │
+│    File "/opt/homebrew/lib/python3.11/site-packages/litellm/llms/ollama/completion/transformation.py", line 322, in transform_request                                                        │
+│      modified_prompt = ollama_pt(model=model, messages=messages)                                                                                                                             │
+│                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                                                                                                             │
+│    File "/opt/homebrew/lib/python3.11/site-packages/litellm/litellm_core_utils/prompt_templates/factory.py", line 229, in ollama_pt                                                          │
+│      tool_calls = messages[msg_i].get("tool_calls")                                                                                                                                          │
+│                   ~~~~~~~~^^^^^^^                                                                                                                                                            │
+│  IndexError: list index out of range                                                                                                                                                         │
+│                                                                                                                                                                                              │
+│                                                                                                                                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+ERROR:root:LiteLLM call failed: litellm.APIConnectionError: list index out of range
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/litellm/main.py", line 2870, in completion
+    response = base_llm_http_handler.completion(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/litellm/llms/custom_httpx/llm_http_handler.py", line 269, in completion
+    data = provider_config.transform_request(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/litellm/llms/ollama/completion/transformation.py", line 322, in transform_request
+    modified_prompt = ollama_pt(model=model, messages=messages)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/litellm/litellm_core_utils/prompt_templates/factory.py", line 229, in ollama_pt
+    tool_calls = messages[msg_i].get("tool_calls")
+                 ~~~~~~~~^^^^^^^
+IndexError: list index out of range
+
+ Error during LLM call: litellm.APIConnectionError: list index out of range
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/litellm/main.py", line 2870, in completion
+    response = base_llm_http_handler.completion(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/litellm/llms/custom_httpx/llm_http_handler.py", line 269, in completion
+    data = provider_config.transform_request(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/litellm/llms/ollama/completion/transformation.py", line 322, in transform_request
+    modified_prompt = ollama_pt(model=model, messages=messages)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/litellm/litellm_core_utils/prompt_templates/factory.py", line 229, in ollama_pt
+    tool_calls = messages[msg_i].get("tool_calls")
+                 ~~~~~~~~^^^^^^^
+IndexError: list index out of range
+
+ An unknown error occurred. Please check the details below.
+ Error details: litellm.APIConnectionError: list index out of range
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/litellm/main.py", line 2870, in completion
+    response = base_llm_http_handler.completion(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/litellm/llms/custom_httpx/llm_http_handler.py", line 269, in completion
+    data = provider_config.transform_request(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/litellm/llms/ollama/completion/transformation.py", line 322, in transform_request
+    modified_prompt = ollama_pt(model=model, messages=messages)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/litellm/litellm_core_utils/prompt_templates/factory.py", line 229, in ollama_pt
+    tool_calls = messages[msg_i].get("tool_calls")
+                 ~~~~~~~~^^^^^^^
+IndexError: list index out of range
+
+🚀 Crew: crew
+└── 📋 Task: ac03f8bd-bea0-495a-904f-37249d7845e4
+       Assigned to: Observer from Ceph metrics
+       Status: ❌ Failed
+    └── 🤖 Agent: Observer from Ceph metrics
+            Status: In Progress
+        └── ❌ LLM Failed
+╭──────────────────────────────────────────────────────────────────────────────────────── Task Failure ────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                                                                                                              │
+│  Task Failed                                                                                                                                                                                 │
+│  Name: ac03f8bd-bea0-495a-904f-37249d7845e4                                                                                                                                                  │
+│  Agent: Observer from Ceph metrics                                                                                                                                                           │
+│                                                                                                                                                                                              │
+│                                                                                                                                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+╭──────────────────────────────────────────────────────────────────────────────────────── Crew Failure ────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                                                                                                                              │
+│  Crew Execution Failed                                                                                                                                                                       │
+│  Name: crew                                                                                                                                                                                  │
+│  ID: f9801e6e-f191-402f-8cb9-36028244e4fd                                                                                                                                                    │
+│                                                                                                                                                                                              │
+│                                                                                                                                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/litellm/main.py", line 2870, in completion
+    response = base_llm_http_handler.completion(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/litellm/llms/custom_httpx/llm_http_handler.py", line 269, in completion
+    data = provider_config.transform_request(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/litellm/llms/ollama/completion/transformation.py", line 322, in transform_request
+    modified_prompt = ollama_pt(model=model, messages=messages)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/litellm/litellm_core_utils/prompt_templates/factory.py", line 229, in ollama_pt
+    tool_calls = messages[msg_i].get("tool_calls")
+                 ~~~~~~~~^^^^^^^
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/chebrolubalasaiharika/Desktop/myown/multi-agent/crew.py", line 19, in <module>
+    result=crew.kickoff(inputs={'topic':'Get disk occupation'})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/crewai/crew.py", line 649, in kickoff
+    result = self._run_sequential_process()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/crewai/crew.py", line 761, in _run_sequential_process
+    return self._execute_tasks(self.tasks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/crewai/crew.py", line 864, in _execute_tasks
+    task_output = task.execute_sync(
+                  ^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/crewai/task.py", line 347, in execute_sync
+    return self._execute_core(agent, context, tools)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/crewai/task.py", line 491, in _execute_core
+    raise e  # Re-raise the exception after emitting the event
+    ^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/crewai/task.py", line 411, in _execute_core
+    result = agent.execute_task(
+             ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/crewai/agent.py", line 319, in execute_task
+    raise e
+  File "/opt/homebrew/lib/python3.11/site-packages/crewai/agent.py", line 295, in execute_task
+    result = self._execute_without_timeout(task_prompt, task)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/crewai/agent.py", line 399, in _execute_without_timeout
+    return self.agent_executor.invoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/crewai/agents/crew_agent_executor.py", line 123, in invoke
+    raise e
+  File "/opt/homebrew/lib/python3.11/site-packages/crewai/agents/crew_agent_executor.py", line 112, in invoke
+    formatted_answer = self._invoke_loop()
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/crewai/agents/crew_agent_executor.py", line 208, in _invoke_loop
+    raise e
+  File "/opt/homebrew/lib/python3.11/site-packages/crewai/agents/crew_agent_executor.py", line 155, in _invoke_loop
+    answer = get_llm_response(
+             ^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/crewai/utilities/agent_utils.py", line 156, in get_llm_response
+    raise e
+  File "/opt/homebrew/lib/python3.11/site-packages/crewai/utilities/agent_utils.py", line 147, in get_llm_response
+    answer = llm.call(
+             ^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/crewai/llm.py", line 888, in call
+    return self._handle_non_streaming_response(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/crewai/llm.py", line 727, in _handle_non_streaming_response
+    response = litellm.completion(**params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/litellm/utils.py", line 1247, in wrapper
+    raise e
+  File "/opt/homebrew/lib/python3.11/site-packages/litellm/utils.py", line 1125, in wrapper
+    result = original_function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/litellm/main.py", line 3182, in completion
+    raise exception_type(
+          ^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 2214, in exception_type
+    raise e
+  File "/opt/homebrew/lib/python3.11/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 2190, in exception_type
+    raise APIConnectionError(
+litellm.exceptions.APIConnectionError: litellm.APIConnectionError: list index out of range
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.11/site-packages/litellm/main.py", line 2870, in completion
+    response = base_llm_http_handler.completion(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/litellm/llms/custom_httpx/llm_http_handler.py", line 269, in completion
+    data = provider_config.transform_request(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/litellm/llms/ollama/completion/transformation.py", line 322, in transform_request
+    modified_prompt = ollama_pt(model=model, messages=messages)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/litellm/litellm_core_utils/prompt_templates/factory.py", line 229, in ollama_pt
+    tool_calls = messages[msg_i].get("tool_calls")
+                 ~~~~~~~~^^^^^^^
+IndexError: list index out of range
